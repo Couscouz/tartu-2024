@@ -1,5 +1,5 @@
 # University of Tartu - Institute of Computer Science
-## Spring Semester 2024
+**Spring Semester 2024**
 
 
 # Courses
@@ -23,4 +23,4 @@ LTAT.06.020	Internet of Things	6 ECTS
 Telia CBONB 2024 Bootcamp	3 ECTS
 
 
-Total	42 ECTS
+**Total	42 ECTS**
