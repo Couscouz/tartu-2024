@@ -1,5 +1,6 @@
-## Spring Semester 2024
 ## University of Tartu - Institute of Computer Science
+## Spring Semester 2024
+
 
 # Courses
 
