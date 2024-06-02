@@ -1,0 +1,12 @@
+curl -X POST https://webappsec.cs.ut.ee/csrf/comments_referer.php -d "comment=NoRefererHeader" -e "https://google.com"
+curl -X POST https://webappsec.cs.ut.ee/csrf/comments_referer.php -d "comment=RefererHeaderSet" -e "https://webappsec.cs.ut.ee/csrf/comments_referer.php"
+
+To explain :
+
+In the first CURL command I'm trying to POST comment with Referer header set to google website
+This returns an error because google is not the host website.
+
+In the second one, I'm setting the Referer header as the website itself, and so, I can POST my comment
+
+
+So we can say this website is using the referer-based validation

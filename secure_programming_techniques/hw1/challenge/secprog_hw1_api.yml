@@ -1,0 +1,206 @@
+openapi: 3.0.0
+info:
+  description: powered by Flasgger
+  termsOfService: /tos
+  title: SecProg Homework 1 Swagger API
+  version: '1.0'
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: Authentication
+  - name: Users
+  - name: Grades
+security:
+  - bearerAuth:
+    - teacher
+    - student
+paths:
+  /api/average-grade:
+    get:
+      summary: Calculates the average grade for a user.
+      tags:
+        - Grades
+      responses:
+        '200':
+          description: Returns the average grade.
+        '400':
+          description: Indicates an unexpected issue occurred.
+      security:
+        - bearerAuth: [student]
+  /api/grades:
+    get:
+      summary: Retrieves grades for current user.
+      tags:
+        - Grades
+      responses:
+        '200':
+          description: Returns grades.
+        '400':
+          description: Indicates an unexpected issue occurred.
+      security:
+        - bearerAuth: []
+  /api/grades/{user_id}:
+    get:
+      summary: Show grades for the user with :user_id.
+      tags:
+        - Grades
+      parameters:
+        - name: user_id
+          in: path
+          description: The ID of the user.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Returns grades after management.
+      security:
+        - bearerAuth: []
+    post:
+      summary: Add a grade for the user with :user_id.
+      tags:
+        - Grades
+      parameters:
+        - name: user_id
+          in: path
+          description: The ID of the user.
+          required: true
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grade:
+                  type: string
+                  description: The grade to be added.
+                description:
+                  type: string
+                  description: The description for the grade.
+                subject:
+                  type: string
+                  description: The subject of the grade.
+      responses:
+        '200':
+          description: Returns grades after management.
+      security:
+        - bearerAuth: []
+    delete:
+      summary: Deletes the grade that was added last.
+      tags:
+        - Grades
+      parameters:
+        - name: user_id
+          in: path
+          description: The ID of the user.
+          required: true
+          type: string        
+      responses:
+        '200':
+          description: Returns grades after management.
+      security:
+        - bearerAuth: []
+  /api/signup:
+    post:
+      summary: Registers a new user.
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Indicates successful registration.
+        '400':
+          description: Indicates that the user already exists.
+  /api/login:
+    post:
+      summary: Logs in a user.
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Returns a token upon successful login.
+        '400':
+          description: Invalid email or password.
+  /api/logout:
+    post:
+      summary: Logs out a user.
+      tags:
+        - Authentication
+      responses:
+        '200':
+          description: Indicates successful logout.
+      security:
+        - bearerAuth: []
+  /api/users:
+    get:
+      summary: Retrieves all users.
+      tags:
+        - Users
+      responses:
+        '200':
+          description: Returns all users.
+      security:
+        - bearerAuth: []
+  /api/users/{user_id}:
+    get:
+      summary: Retrieves user information by ID.
+      tags:
+        - Users
+      parameters:
+        - name: user_id
+          in: path
+          description: The ID of the user.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns user information.
+      security:
+        - bearerAuth: []
+    delete:
+      summary: Deletes a user by id.
+      tags:
+        - Users
+      parameters:
+        - name: user_id
+          in: path
+          description: The ID of the user.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deletes a user by id.
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+

@@ -1,0 +1,16 @@
+What happens when a point that is pointed by lines is destroyed?
+
+Here, when a point is destroyed, the line can't longer access it (Seg fault)
+
+-------------------------------------------------------------------------------
+
+How could point destructor know in which lines it is included?
+
+By saving all lines using the point (new attribute for the point class) in a point attribute.
+
+-------------------------------------------------------------------------------
+
+What could point destructor do to fix the situation? 
+
+Handle a "LineRemovePoint" method.
+Like this, when a point is destroyed, it notifies the lines containing it, and they can adapt.

@@ -1,0 +1,18 @@
+COOKIE=$(curl https://webappsec.cs.ut.ee/csrf/comments_samesite.php -s -o /dev/null -c cookie.txt && grep -i "samesite" cookie.txt | awk '{print $NF}'
+)
+curl -X POST https://webappsec.cs.ut.ee/csrf/comments_samesite.php -b "cookie_name=$COOKIE" -d "comment=FinalTestingQ7"
+curl -X POST https://webappsec.cs.ut.ee/csrf/comments_samesite.php -b "samesite_sessid=$COOKIE" -d "comment=TestingLine3"
+
+To explain :
+
+In the first command we are retrieving the cookie.
+For this last I made up a full command to store the cookie automatically.
+So for this, we're storing the cookie in cookie.txt as usual, then
+I'm grepping the line with the cookie, and extracting the last word of this line, which is our cookie
+
+
+In the second command, I'm trying to post a comment with a cookie_name value stored previously, which is not working
+
+Finally, I'm trying to post a comment with a samesite_sessid value (cookie which has a SamSite=Lax), and this is working !
+
+So we can say this website is using SameSite=Lax cookie

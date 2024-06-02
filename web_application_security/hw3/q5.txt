@@ -1,0 +1,15 @@
+curl -X POST https://webappsec.cs.ut.ee/csrf/comments_token.php -d "comment=TestingNoToken"
+curl https://webappsec.cs.ut.ee/csrf/comments_token.php -c cookie.txt
+curl -X POST https://webappsec.cs.ut.ee/csrf/comments_token.php -b cookie.txt -d "comment=TestingWithToken&csrf_token=TOKEN"
+
+To explain:
+The first CURL command is trying to post a comment without giving csrf token value, so this returns an error.
+We could also try to pass something like "comment=TestingNoToken&csrf_token=TestRandomToken"
+
+In order to success, we need to get a cookie value and retrieve csrf token value of this cookie
+by grepping it in the output of the 2nd CURL command.
+Here I did it manually but we could combine with another command to grep it automatically.
+
+Finally, we use this cookie associated with this token in order to post the comment, as in 3rd CURL command
+
+We can say this is token-based validation

@@ -1,0 +1,35 @@
+------
+
+
+browse folder files, unziped ecnry.encr
+noted importants    
+
+
+What app is doing ?
+Converting txt to encr (create a new file)
+Need a key
+
+
+
+So we 26 encrypted files, and we need to reverse their encryptions
+lets try with the first one
+
+
+-----------
+not-important.txt:
+
+e20aad41819bf26e6b1de4f5c61f7c04
+
+ecnry.encr:
+
+0=&k 1%&9s74%.s!; 9*4!*$=d>&2s-&c2<1'c8'11&%'d6,/6
+
+
+-->not important.encr (with key no)
+
+
+
+super-safe-encr.zip:
+
+---output/passwords.txt:
+aHR0cHM6Ly9yYi5neS9jMm11OXQ=

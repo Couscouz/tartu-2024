@@ -1,0 +1,2 @@
+pycryptodomex==3.17
+tk==0.1.0
