@@ -1,6 +1,6 @@
 # University of Tartu - Institute of Computer Science
-**Spring Semester 2024**
 
+Delta Center, Spring Semester 2024
 
 # Courses
 
