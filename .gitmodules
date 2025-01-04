@@ -1,0 +1,3 @@
+[submodule "internet_of_things"]
+	path = internet_of_things
+	url = https://github.com/Couscouz/iot-tartu-2024.git
