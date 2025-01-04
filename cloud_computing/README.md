@@ -1,0 +1,15 @@
+# Lab sessions
+
+- 1. Introduction to Infrastructure as a Service (IaaS) and OpenStack (13-15 February)
+- 2. Working with Docker (20-22 February)
+- 3. PaaS (27-29 February)
+- 4. Cloud Functions (05-07 March)
+- 5. Cloud Databases (12-14 March)
+- 6. Load Balancing (19-21 March)
+- 7. Introduction to Apache Spark (26-28 March)
+- 8. Data pipelines using Apache NiFi (2-4 April)
+- 9. RabbitMQ (8-10 April)
+- 10. Monitoring (16-17 April)
+- 11. Working with Kubernetes (23-25 April)
+- 12. Introduction to deployment modelling with TOSCA (30 April-02 May)
+- 13. Azure IoT Hub (07-09 May) 
